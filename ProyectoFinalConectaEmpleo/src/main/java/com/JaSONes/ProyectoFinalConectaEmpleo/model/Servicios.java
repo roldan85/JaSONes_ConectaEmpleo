@@ -1,6 +1,6 @@
 package com.JaSONes.ProyectoFinalConectaEmpleo.model;
 
-public class servicios {
+public class Servicios {
 	private int id;
 	private String nombre_del_Servicio;
 	private Double precio_del_Servicio;
@@ -8,7 +8,7 @@ public class servicios {
 	
 	
 	
-	public servicios(String nombre_del_Servicio, Double precio_del_Servicio, String notas) {
+	public Servicios(String nombre_del_Servicio, Double precio_del_Servicio, String notas) {
 		super();
 		this.nombre_del_Servicio = nombre_del_Servicio;
 		this.precio_del_Servicio = precio_del_Servicio;
@@ -16,7 +16,7 @@ public class servicios {
 	}
 	
 	
-	public servicios() {
+	public Servicios() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -46,9 +46,5 @@ public class servicios {
 	public void setNotas(String notas) {
 		this.notas = notas;
 	}
-	
-	
-	
-	
 	
 }
