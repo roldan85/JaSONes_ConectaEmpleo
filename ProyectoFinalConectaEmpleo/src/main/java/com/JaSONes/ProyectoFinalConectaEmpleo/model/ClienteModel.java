@@ -1,13 +1,17 @@
 package com.JaSONes.ProyectoFinalConectaEmpleo.model;
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 
-public class Cliente {
+public class ClienteModel implements Serializable {
+		
+
+	private static final long serialVersionUID = -8654010482565274944L;
 		public enum Sexo{
 			HOMBRE, MUJER
 		}
@@ -27,12 +31,15 @@ public class Cliente {
 		private LocalDate fecha_primera_visita;
 		private int peluquero_favorito;
 		
-		
-		public Cliente() {
+		//Constructor por defecto
+		public ClienteModel(String dni2, Object object, Object object2) {
 			super();
-			// TODO Auto-generated constructor stub
+
 		}
-		public Cliente(String dni, String nombre, String apellidos, LocalDate fecha_Nacimiento, String telefono_fijo,
+		
+		//Constructor con parámetros		
+		public ClienteModel(String dni, String nombre, String apellidos, 
+				LocalDate fecha_Nacimiento, String telefono_fijo,
 				String mail) {
 			super();
 			this.dni = dni;
@@ -42,6 +49,8 @@ public class Cliente {
 			this.telefono_fijo = telefono_fijo;
 			this.mail = mail;
 		}
+		
+		//Getters and setters
 		public String getDni() {
 			return dni;
 		}
@@ -114,7 +123,43 @@ public class Cliente {
 		public void setPeluquero_favorito(int peluquero_favorito) {
 			this.peluquero_favorito = peluquero_favorito;
 		}
+
+		//Método toString
+		@Override
+		public String toString() {
+			return "ClienteModel [dni=" + dni + ", nombre=" + nombre + ", apellidos=" + apellidos
+					+ ", fecha_Nacimiento=" + fecha_Nacimiento + ", sexo=" + sexo + ", domicilio=" + domicilio + ", cp="
+					+ cp + ", Ciudad=" + Ciudad + ", telefono_fijo=" + telefono_fijo + ", mail=" + mail
+					+ ", fecha_primera_visita=" + fecha_primera_visita + ", peluquero_favorito=" + peluquero_favorito
+					+ "]";
+		}
 		
+		//Método para igualar por DNI.
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				   return true;
+				if (obj == null)
+				   return false;
+				if (getClass() != obj.getClass())
+				   return false;
+				ClienteModel other = (ClienteModel) obj;
+				if (dni != other.dni)
+				    return false;
+				return true;
+
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((dni == null) ? 0 : dni.hashCode());
+			return result;
+
+		}
+		
+
 		
 		
 		

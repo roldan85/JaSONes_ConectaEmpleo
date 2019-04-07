@@ -4,15 +4,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.JaSONes.ProyectoFinalConectaEmpleo.model.Cliente;
+import com.JaSONes.ProyectoFinalConectaEmpleo.model.ClienteModel;
 
 @Repository
 public class ClienteDaoImpl implements ClienteDao {
 	
-	private static List<ClienteDao> clientes;
+	private static List<ClienteModel> clientes;
 
 	@Override
-	public ClienteDao save(ClienteDao cliente) {
+	public ClienteModel save(ClienteModel cliente) {
 		if (!clientes.contains(cliente)) {
 			clientes.add(cliente);
 			return cliente;
@@ -22,17 +22,18 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public void edit(ClienteDao cliente) {
+	public void edit(ClienteModel cliente) {
 		int posicion = clientes.indexOf(cliente);
 		if (posicion >= 0) {
 			clientes.remove(posicion);
 			clientes.add(cliente);
 		}
+
 		
 	}
 
 	@Override
-	public void delete(ClienteDao cliente) {
+	public void delete(ClienteModel cliente) {
 		int posicion = clientes.indexOf(cliente);
 		if (posicion >= 0) {
 			clientes.remove(posicion);
@@ -42,42 +43,38 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public List<ClienteDao> getAll() {
-
+	public List<ClienteModel> getAll() {
+		// TODO Auto-generated method stub
 		return clientes;
 	}
 
+
 	@Override
-	public Cliente get(int id) {
-		int posicion = clientes.indexOf(ClienteDao(id, null, null));
-		if (posicion >= 0)
-			return (Cliente) clientes.get(posicion);
-		else
-			return null;
-
-	}
-
-	private Object ClienteDao(int id, Object object, Object object2) {
+	public ClienteDao save(ClienteDao cliente) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Cliente save(Cliente cliente) {
+	public void edit(ClienteDao cliente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(ClienteDao cliente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ClienteModel get(String dni) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public void edit(Cliente cliente) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void delete(Cliente cliente) {
-		// TODO Auto-generated method stub
-		
-	}
+
+
 
 }
