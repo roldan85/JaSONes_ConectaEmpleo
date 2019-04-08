@@ -8,7 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 
-public class ClienteModel implements Serializable {
+public class Cliente implements Serializable {
 		
 
 	private static final long serialVersionUID = -8654010482565274944L;
@@ -32,13 +32,13 @@ public class ClienteModel implements Serializable {
 		private int peluquero_favorito;
 		
 		//Constructor por defecto
-		public ClienteModel(String dni2, Object object, Object object2) {
+		public Cliente(String dni2, Object object, Object object2) {
 			super();
 
 		}
 		
 		//Constructor con parámetros		
-		public ClienteModel(String dni, String nombre, String apellidos, 
+		public Cliente(String dni, String nombre, String apellidos, 
 				LocalDate fecha_Nacimiento, String telefono_fijo,
 				String mail) {
 			super();
@@ -143,7 +143,7 @@ public class ClienteModel implements Serializable {
 				   return false;
 				if (getClass() != obj.getClass())
 				   return false;
-				ClienteModel other = (ClienteModel) obj;
+				Cliente other = (Cliente) obj;
 				if (dni != other.dni)
 				    return false;
 				return true;

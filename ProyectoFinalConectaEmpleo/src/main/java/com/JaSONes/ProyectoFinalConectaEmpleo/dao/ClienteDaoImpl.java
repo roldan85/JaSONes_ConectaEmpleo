@@ -4,15 +4,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.JaSONes.ProyectoFinalConectaEmpleo.model.ClienteModel;
+import com.JaSONes.ProyectoFinalConectaEmpleo.model.Cliente;
 
 @Repository
 public class ClienteDaoImpl implements ClienteDao {
 	
-	private static List<ClienteModel> clientes;
+	private static List<Cliente> clientes;
 
 	@Override
-	public ClienteModel save(ClienteModel cliente) {
+	public Cliente save(Cliente cliente) {
 		if (!clientes.contains(cliente)) {
 			clientes.add(cliente);
 			return cliente;
@@ -22,7 +22,7 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public void edit(ClienteModel cliente) {
+	public void edit(Cliente cliente) {
 		int posicion = clientes.indexOf(cliente);
 		if (posicion >= 0) {
 			clientes.remove(posicion);
@@ -33,7 +33,7 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public void delete(ClienteModel cliente) {
+	public void delete(Cliente cliente) {
 		int posicion = clientes.indexOf(cliente);
 		if (posicion >= 0) {
 			clientes.remove(posicion);
@@ -43,7 +43,7 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public List<ClienteModel> getAll() {
+	public List<Cliente> getAll() {
 		// TODO Auto-generated method stub
 		return clientes;
 	}
@@ -68,7 +68,7 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public ClienteModel get(String dni) {
+	public Cliente get(String dni) {
 		// TODO Auto-generated method stub
 		return null;
 	}
