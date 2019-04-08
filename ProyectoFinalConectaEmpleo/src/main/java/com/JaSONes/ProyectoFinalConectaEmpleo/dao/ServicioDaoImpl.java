@@ -4,17 +4,17 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.JaSONes.ProyectoFinalConectaEmpleo.model.ServicioModel;
+import com.JaSONes.ProyectoFinalConectaEmpleo.model.Servicio;
 
 @Repository
 public class ServicioDaoImpl implements ServicioDao {
 	
-	private static List<ServicioModel> servicios;
+	private static List<Servicio> servicios;
 
 	@Override
-	public ServicioModel save(ServicioModel servicio) {
+	public Servicio save(Servicio servicio) {
 		if (!servicios.contains(servicio)) {
-			servicios.add((ServicioModel) servicio);
+			servicios.add((Servicio) servicio);
 			return servicio;
 			}
 			return null;
@@ -22,18 +22,18 @@ public class ServicioDaoImpl implements ServicioDao {
 	}
 
 	@Override
-	public void edit(ServicioModel servicio) {
+	public void edit(Servicio servicio) {
 		int posicion = servicios.indexOf(servicio);
 		if (posicion >= 0) {
 			servicios.remove(posicion);
-			servicios.add((ServicioModel) servicio);
+			servicios.add((Servicio) servicio);
 		}
 
 		
 	}
 
 	@Override
-	public void delete(ServicioModel servicio) {
+	public void delete(Servicio servicio) {
 		int posicion = servicios.indexOf(servicio);
 		if (posicion >= 0) {
 			servicios.remove(posicion);
@@ -43,14 +43,14 @@ public class ServicioDaoImpl implements ServicioDao {
 	}
 
 	@Override
-	public List<ServicioModel> getAll() {
+	public List<Servicio> getAll() {
 
 		return servicios;
 	}
 
 	@Override
-	public ServicioModel get(int id) {
-		int posicion = servicios.indexOf(new ServicioModel(id, null, null, null));
+	public Servicio get(int id) {
+		int posicion = servicios.indexOf(new Servicio(id, null, null, null));
 		return posicion >= 0 ? servicios.get(posicion) : null;
 
 		}

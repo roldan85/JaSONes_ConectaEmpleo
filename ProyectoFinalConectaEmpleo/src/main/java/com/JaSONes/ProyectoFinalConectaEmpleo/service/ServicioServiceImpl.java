@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.JaSONes.ProyectoFinalConectaEmpleo.dao.ServicioDao;
-import com.JaSONes.ProyectoFinalConectaEmpleo.model.ServicioModel;
+import com.JaSONes.ProyectoFinalConectaEmpleo.model.Servicio;
 
 @Service("servicioService")
 public class ServicioServiceImpl implements ServicioService {
@@ -15,32 +15,32 @@ public class ServicioServiceImpl implements ServicioService {
 	ServicioDao servicioDao;
 
 	@Override
-	public ServicioModel save(ServicioModel servicio) {
+	public Servicio save(Servicio servicio) {
 
 		return this.servicioDao.save(servicio);
 	}
 
 	@Override
-	public void edit(ServicioModel servicio) {
+	public void edit(Servicio servicio) {
 		this.servicioDao.edit(servicio);
 
 		
 	}
 
 	@Override
-	public void delete(ServicioModel servicio) {
+	public void delete(Servicio servicio) {
 		this.servicioDao.delete(servicio);
 		
 	}
 
 	@Override
-	public List<ServicioModel> getAll() {
+	public List<Servicio> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ServicioModel get(int id) {
+	public Servicio get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

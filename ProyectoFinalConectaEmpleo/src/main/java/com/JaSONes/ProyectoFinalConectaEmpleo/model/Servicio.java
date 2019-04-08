@@ -2,7 +2,7 @@ package com.JaSONes.ProyectoFinalConectaEmpleo.model;
 
 import java.io.Serializable;
 
-public class ServicioModel implements Serializable {
+public class Servicio implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private int id;
@@ -12,7 +12,7 @@ public class ServicioModel implements Serializable {
 	
 	
 	//Constructor con parámetros
-	public ServicioModel(int id, String nombre_del_Servicio,
+	public Servicio(int id, String nombre_del_Servicio,
 			Double precio_del_Servicio, String notas) {
 		super();
 		this.id = id;
@@ -22,7 +22,7 @@ public class ServicioModel implements Serializable {
 	}
 
 	//Constructor por defecto
-	public ServicioModel() {
+	public Servicio() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
