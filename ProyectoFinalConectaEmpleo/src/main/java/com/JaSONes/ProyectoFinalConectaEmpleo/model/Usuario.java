@@ -1,10 +1,10 @@
 package com.JaSONes.ProyectoFinalConectaEmpleo.model;
 
-public class UsuarioModel {
+public class Usuario {
 	private String user;
 	private String password;
 	
-	public UsuarioModel() {
+	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
