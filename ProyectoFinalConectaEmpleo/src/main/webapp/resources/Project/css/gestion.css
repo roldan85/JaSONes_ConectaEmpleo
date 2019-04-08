@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+body {
+  padding-top: 50px;
+  line-height: 1;
+}
+
+#cabecera{
+	background-image: "src/main/webapp/resources/Project/imagenes/cabeceraweb.png";
+	height: 25%;
+	
+}
+#menu{
+	background-color: "#d9d9d9";
+	
+}
