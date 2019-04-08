@@ -2,8 +2,13 @@ package com.JaSONes.ProyectoFinalConectaEmpleo.model;
 
 public class UsuarioModel {
 	private String user;
+	private String password;
 	
-
+	public UsuarioModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	public String getUser() {
 		return user;
 	}
@@ -12,10 +17,12 @@ public class UsuarioModel {
 		this.user = user;
 	}
 
-	public UsuarioModel() {
-		super();
-		// TODO Auto-generated constructor stub
+	public String getPassword() {
+		return password;
 	}
-	
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 }
